@@ -1,4 +1,5 @@
 # 🧠 Agente SQL com LangChain, PostgreSQL e Ollama
+![Captura de Tela (214)](https://github.com/user-attachments/assets/87c34b7c-5f4b-4cef-8b3f-60f84f19e6d3)
 
 ### Tabela de Conteúdos
 - [Contexto e Visão Geral](#contexto-e-visão-geral)

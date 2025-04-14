@@ -12,7 +12,7 @@
 
 ---
 
-## Contexto e Visão Geral
+### Contexto e Visão Geral
 
 Este projeto implementa um **Agente SQL inteligente**, capaz de entender perguntas feitas em **linguagem natural (português)** e transformá-las em **consultas SQL válidas e seguras** para um banco PostgreSQL. O agente utiliza o **LangChain** com o modelo **Mistral** rodando localmente via **Ollama**.
 
@@ -20,7 +20,7 @@ Esse sistema é útil para analistas, equipes de dados ou empresas que desejam c
 
 ---
 
-## Tecnologias Utilizadas
+### Tecnologias Utilizadas
 
 - **Python 3.10+**
 - **LangChain**
@@ -33,66 +33,121 @@ Esse sistema é útil para analistas, equipes de dados ou empresas que desejam c
 
 ---
 
-## Pré-Requisitos e Instalação
+### Pré-Requisitos e Instalação
 
-### 1. Clonar o projeto
+#### 1. Clonar o Projeto
 
-```bash
-git clone https://github.com/seu-usuario/sql-agent.git
-cd sql-agent
+#### 2. Criar Ambiente Virtual
 
-### 2. Criar Ambiente Virtual
+Para criar um ambiente virtual, você pode usar o comando abaixo:
 
-### 3. Ativar Ambiente Virtual
-### 4. Instalar as Dependências
-### 5. Criar o arquivo .env
-### 6. Instalar e rodar o Ollama
+python -m venv venv
 
-## Configuração do Banco de Dados
+
+#### 3. Ativar Ambiente Virtual
+
+Para ativar o ambiente virtual, use o comando apropriado para o seu sistema operacional:
+
+- **Windows:**
+venv\Scripts\activate
+
+- **Linux/MacOS:**
+
+source venv/bin/activate
+
+
+#### 4. Instalar as Dependências
+
+Instale as dependências necessárias com o seguinte comando:
+
+
+#### 5. Criar o Arquivo `.env`
+
+Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:
+
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=nome_do_banco
+DB_USER=nome_do_usuario
+DB_PASSWORD=sua_senha
+
+
+#### 6. Instalar e Rodar o Ollama
+
+Para instalar e rodar o Ollama, siga as instruções específicas do modelo Mistral.
+
+---
+
+### Configuração do Banco de Dados
+
 O projeto depende de um banco PostgreSQL com as seguintes tabelas e relacionamentos:
-### 1. Tabelas:
-clientes
-id, nome, saldo
 
-produtos
-id, nome, preco
+#### 1. Tabelas:
 
-transacoes
-id, cliente_id, produto_id, data
+| Tabela    | Colunas          |
+|-----------|------------------|
+| clientes  | id, nome, saldo  |
+| produtos  | id, nome, preco  |
+| transacoes| id, cliente_id, produto_id, data |
 
-### 2. Relacionamentos:
-Um cliente pode ter várias transações (1:N)
-Cada transação está associada a um único produto (N:1)
+#### 2. Relacionamentos:
 
-## Como Executar o Projeto
-Com o ambiente ativado e o Ollma Rodando:
+- **Um cliente pode ter várias transações (1:N)**.
+- **Cada transação está associada a um único produto (N:1)**.
+
+---
+
+### Como Executar o Projeto
+
+Com o ambiente ativado e o Ollama rodando:
 
 Você poderá fazer perguntas como: "Quem comprou um notebook?"
-Exemplo de resposta : • Cliente: Alice – Produto: Notebook – Valor: R$ 2500  
 
-## Validação e Segurança
+Exemplo de resposta:
+- **Cliente:** Alice
+- **Produto:** Notebook
+- **Valor:** R$ 2500
+
+---
+
+### Validação e Segurança
+
 O projeto implementa práticas para garantir segurança e estabilidade:
 
-Validação de queries via sql_db_query_checker
+- **Validação de queries** via `sql_db_query_checker`.
+- **Temperatura configurada para 0.0** (respostas consistentes).
+- **Tratamento de erros** com `handle_parsing_errors=True`.
+- **Sanitização automática da entrada** com o toolkit do LangChain.
 
-Temperatura configurada para 0.0 (respostas consistentes)
+---
 
-Tratamento de erros com handle_parsing_errors=True
+### Melhorias Futuras
 
-Sanitização automática da entrada com o toolkit do LangChain
+- **Criar uma interface visual** com Streamlit.
+- **Otimizar a velocidade das consultas** e reduzir tempo de resposta.
+- **Implementar cache de perguntas frequentes**.
+- **Incluir LangGraph** para visualizar o fluxo do agente.
+- **Melhorar a formatação da resposta** (ex.: tabelas HTML ou Markdown).
 
-## Melhorias Futuras
-Criar uma interface visual com Streamlit
+---
 
-Otimizar a velocidade das consultas e reduzir tempo de resposta
+### Autor
 
-Implementar cache de perguntas frequentes
+Desenvolvido por **Cauê Mendonça Magela**.
 
-Incluir LangGraph para visualizar o fluxo do agente
+Este projeto pode ser usado como base para soluções reais de NLP + SQL. Sinta-se à vontade para contribuir, adaptar ou entrar em contato.
 
-Melhorar a formatação da resposta (ex.: tabelas HTML ou Markdown)
 
-## Autor
-Desenvolvido por Cauê Mendonça Magela
-Este projeto pode ser usado como base para soluções reais de NLP + SQL.
-Sinta-se à vontade para contribuir, adaptar ou entrar em contato!
+
+
+
+
+
+
+
+
+
+
+
+
+

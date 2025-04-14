@@ -69,9 +69,13 @@ pip install langchain langchain-community langchain-ollama python-dotenv psycopg
 Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:
 
 DB_HOST=localhost
+
 DB_PORT=5432
+
 DB_NAME=nome_do_banco
+
 DB_USER=nome_do_usuario
+
 DB_PASSWORD=sua_senha
 
 

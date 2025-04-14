@@ -36,6 +36,9 @@ Esse sistema é útil para analistas, equipes de dados ou empresas que desejam c
 ### Pré-Requisitos e Instalação
 
 #### 1. Clonar o Projeto
+```bash
+git clone https://github.com/seu-usuario/sql-agent.git
+cd sql-agent
 
 #### 2. Criar Ambiente Virtual
 

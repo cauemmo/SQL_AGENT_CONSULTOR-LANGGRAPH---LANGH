@@ -60,6 +60,8 @@ source venv/bin/activate
 
 Instale as dependências necessárias com o seguinte comando:
 
+pip install langchain langchain-community langchain-ollama python-dotenv psycopg2
+
 
 #### 5. Criar o Arquivo `.env`
 
@@ -76,7 +78,10 @@ DB_PASSWORD=sua_senha
 
 Para instalar e rodar o Ollama, siga as instruções específicas do modelo Mistral.
 
----
+Baixe o Ollama em: https://ollama.com/download
+
+Depois rode o modelo Mistral:
+ollama run mistral
 
 ### Configuração do Banco de Dados
 
@@ -112,7 +117,7 @@ Exemplo de resposta:
 
 ### Validação e Segurança
 
-O projeto implementa práticas para garantir segurança e estabilidade:
+O projeto implementa práticas para garantir segurança como:
 
 - **Validação de queries** via `sql_db_query_checker`.
 - **Temperatura configurada para 0.0** (respostas consistentes).

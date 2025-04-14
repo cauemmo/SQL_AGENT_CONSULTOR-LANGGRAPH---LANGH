@@ -90,6 +90,26 @@ Depois rode o modelo Mistral:
 ollama run mistral
 
 ### Configuração do Banco de Dados
+Use o código abaixo para testar um exemplo, ou crie do zero.
+
+CREATE TABLE clientes (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(255),
+    saldo NUMERIC
+);
+
+CREATE TABLE produtos (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(255),
+    preco NUMERIC
+);
+
+CREATE TABLE transacoes (
+    id SERIAL PRIMARY KEY,
+    cliente_id INT REFERENCES clientes(id),
+    produto_id INT REFERENCES produtos(id),
+    data TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 
 O projeto depende de um banco PostgreSQL com as seguintes tabelas e relacionamentos:
 
